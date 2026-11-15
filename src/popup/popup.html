@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-doc-title="extName">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Element Hider</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup-header">
+        <img src="../../assets/icons/icon32.png" alt="" width="26" height="26" />
+        <h1>Page Element Hider</h1>
+        <button id="settings-button" class="icon-button" type="button" data-i18n-title="popupOpenSettings" data-i18n-aria-label="popupOpenSettings">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10.3 4.3a1.7 1.7 0 0 1 3.4 0 1.7 1.7 0 0 0 2.5 1.1 1.7 1.7 0 0 1 2.4 2.4 1.7 1.7 0 0 0 1.1 2.5 1.7 1.7 0 0 1 0 3.4 1.7 1.7 0 0 0-1.1 2.5 1.7 1.7 0 0 1-2.4 2.4 1.7 1.7 0 0 0-2.5 1.1 1.7 1.7 0 0 1-3.4 0 1.7 1.7 0 0 0-2.5-1.1 1.7 1.7 0 0 1-2.4-2.4 1.7 1.7 0 0 0-1.1-2.5 1.7 1.7 0 0 1 0-3.4 1.7 1.7 0 0 0 1.1-2.5 1.7 1.7 0 0 1 2.4-2.4 1.7 1.7 0 0 0 2.5-1.1z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+        </button>
+      </header>
+
+      <section class="section" aria-labelledby="section-extension">
+        <h2 id="section-extension" class="section-title" data-i18n="popupSectionExtension">Extension</h2>
+        <label class="card">
+          <span class="tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" /><circle cx="12" cy="12" r="3" /></svg>
+          </span>
+          <span class="card-text">
+            <span class="card-title" data-i18n="popupHidingTitle">Hiding</span>
+            <span class="muted" data-i18n="popupHidingSub">On all websites</span>
+          </span>
+          <input id="enabled-toggle" class="switch" type="checkbox" role="switch" data-i18n-aria-label="popupEnabled" />
+        </label>
+      </section>
+
+      <section class="section" id="site-section" aria-labelledby="section-site">
+        <h2 id="section-site" class="section-title" data-i18n="popupSectionSite">Current site</h2>
+        <label class="card">
+          <span id="site-tile" class="tile tile-letter" aria-hidden="true">–</span>
+          <span class="card-text">
+            <span id="site-name" class="card-title" data-i18n="popupSiteActiveGeneric">Active on this site</span>
+            <span id="site-meta" class="muted"></span>
+          </span>
+          <input id="site-toggle" class="switch" type="checkbox" role="switch" data-i18n-aria-label="popupSectionSite" />
+        </label>
+      </section>
+
+      <hr class="divider" />
+
+      <button id="select-button" class="button button-primary" type="button">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4" /><circle cx="12" cy="12" r="2.5" /></svg>
+          <span id="select-label" data-i18n="popupSelect">Select element to hide</span>
+        </button>
+
+      <p id="status" class="status" role="status" hidden></p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

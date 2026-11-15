@@ -1,0 +1,476 @@
+{
+  "popupSectionExtension": {
+    "message": "Extension"
+  },
+  "popupSectionSite": {
+    "message": "Current site"
+  },
+  "popupHidingTitle": {
+    "message": "Hiding"
+  },
+  "popupHidingSub": {
+    "message": "On all websites"
+  },
+  "extName": {
+    "message": "Page Element Hider"
+  },
+  "extDescription": {
+    "message": "Pick any element on a webpage and hide it permanently on that website. Rules are stored locally and applied automatically."
+  },
+  "cmdToggleSelection": {
+    "message": "Start or stop selecting an element to hide"
+  },
+  "badgeOff": {
+    "message": "OFF"
+  },
+  "popupEnabled": {
+    "message": "Enabled"
+  },
+  "popupSelect": {
+    "message": "Select element to hide"
+  },
+  "popupExitSelect": {
+    "message": "Exit selection mode"
+  },
+  "popupSiteActiveGeneric": {
+    "message": "Active on this site"
+  },
+  "popupOpenSettings": {
+    "message": "Open settings"
+  },
+  "popupUnsupported": {
+    "message": "This page cannot be modified (only http and https websites are supported)."
+  },
+  "popupReload": {
+    "message": "Reload this page once to activate Page Element Hider here."
+  },
+  "popupError": {
+    "message": "Something went wrong. Try reopening the popup."
+  },
+  "optionsTitle": {
+    "message": "Page Element Hider – Settings"
+  },
+  "optionsControls": {
+    "message": "Controls"
+  },
+  "optionsHidingOn": {
+    "message": "Hiding is on"
+  },
+  "optionsHidingOnHint": {
+    "message": "Turn off to temporarily show every hidden element on every website. Your rules are kept."
+  },
+  "optionsSearchPlaceholder": {
+    "message": "Search by website, description or selector…"
+  },
+  "optionsSearchLabel": {
+    "message": "Search rules"
+  },
+  "optionsDeleteAll": {
+    "message": "Delete all rules…"
+  },
+  "optionsExport": {
+    "message": "Export rules"
+  },
+  "optionsImport": {
+    "message": "Import rules…"
+  },
+  "optionsDisabledBanner": {
+    "message": "Hiding is currently switched off. Hidden elements are visible again until you turn it back on."
+  },
+  "optionsSummary": {
+    "message": "Rules: $p1$ · Websites: $p2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "transferImportTitle": {
+    "message": "Import finished"
+  },
+  "transferImportResult": {
+    "message": "Added: $p1$ · Duplicates skipped: $p2$ · Invalid skipped: $p3$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "transferImportFailedTitle": {
+    "message": "Import failed"
+  },
+  "transferInvalidFile": {
+    "message": "This file is not a valid Page Element Hider export."
+  },
+  "transferTooLarge": {
+    "message": "This file is too large."
+  },
+  "transferNoRulesInFile": {
+    "message": "The file contains no rules."
+  },
+  "transferNothingToExport": {
+    "message": "There are no rules to export yet."
+  },
+  "transferExportFailedTitle": {
+    "message": "Export failed"
+  },
+  "dialogCancel": {
+    "message": "Cancel"
+  },
+  "dialogOk": {
+    "message": "OK"
+  },
+  "dialogErrorTitle": {
+    "message": "Something went wrong"
+  },
+  "deleteRuleTitle": {
+    "message": "Delete this rule?"
+  },
+  "deleteRuleMessage": {
+    "message": "\"$p1$\" on $p2$ will be shown again.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "deleteRuleConfirm": {
+    "message": "Delete rule"
+  },
+  "deleteSiteTitle": {
+    "message": "Remove all rules for $p1$?",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "deleteSiteMessage_one": {
+    "message": "$p1$ rule will be permanently deleted and every hidden element on $p2$ will reappear.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "deleteSiteMessage_other": {
+    "message": "$p1$ rules will be permanently deleted and every hidden element on $p2$ will reappear.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "deleteSiteWarning": {
+    "message": "This cannot be undone."
+  },
+  "deleteSiteConfirm_one": {
+    "message": "Delete $p1$ rule",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "deleteSiteConfirm_other": {
+    "message": "Delete $p1$ rules",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "deleteAllTitle": {
+    "message": "Delete all rules?"
+  },
+  "deleteAllMessage": {
+    "message": "All rules will be permanently deleted and every hidden element will reappear. Rules: $p1$ · Websites: $p2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "deleteAllWarning": {
+    "message": "This cannot be undone. To stop hiding temporarily instead, use the \"$p1$\" switch.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "deleteAllConfirm": {
+    "message": "Delete all rules"
+  },
+  "listEmptyTitle": {
+    "message": "No hidden elements yet"
+  },
+  "listEmptyText": {
+    "message": "Open the extension popup on any website and choose \"Select element to hide\"."
+  },
+  "listNoMatchTitle": {
+    "message": "No rules match your search"
+  },
+  "listNoMatchText": {
+    "message": "Try a different website, description or selector."
+  },
+  "listRuleCount_one": {
+    "message": "$p1$ rule",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "listRuleCount_other": {
+    "message": "$p1$ rules",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "listSiteActive": {
+    "message": "Active on this site"
+  },
+  "listRemoveAll": {
+    "message": "Remove all for this site…"
+  },
+  "listRuleEnabled": {
+    "message": "Rule enabled"
+  },
+  "listNoDescription": {
+    "message": "(no description)"
+  },
+  "listMeta": {
+    "message": "$p1$ · Created $p2$ on $p3$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "listSubdomainsSuffix": {
+    "message": " · incl. subdomains"
+  },
+  "listFallbacks_one": {
+    "message": "$p1$ fallback selector",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "listFallbacks_other": {
+    "message": "$p1$ fallback selectors",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "listEdit": {
+    "message": "Edit"
+  },
+  "listDelete": {
+    "message": "Delete"
+  },
+  "pathWhole": {
+    "message": "Whole website"
+  },
+  "pathOnly": {
+    "message": "Only on $p1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pathPattern": {
+    "message": "Paths matching $p1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "editTitle": {
+    "message": "Edit rule"
+  },
+  "editDescription": {
+    "message": "Description"
+  },
+  "editHostname": {
+    "message": "Website (hostname)"
+  },
+  "editHostnameHint": {
+    "message": "The rule only ever applies to this website."
+  },
+  "editSubdomains": {
+    "message": "Also apply on its subdomains (e.g. blog.example.com)"
+  },
+  "editAppliesTo": {
+    "message": "Applies to"
+  },
+  "editPathSite": {
+    "message": "Whole website (all pages)"
+  },
+  "editPathExact": {
+    "message": "Only this exact path"
+  },
+  "editPathPattern": {
+    "message": "Paths matching a pattern"
+  },
+  "editPath": {
+    "message": "Path"
+  },
+  "editPathHintExact": {
+    "message": "Example: /products/shoes (query string and #hash are ignored)"
+  },
+  "editPathHintPattern": {
+    "message": "Use * as a wildcard. Example: /blog/*"
+  },
+  "editSelector": {
+    "message": "Selector"
+  },
+  "editSelectorHint": {
+    "message": "Use \" >>> \" between segments to step into a shadow root."
+  },
+  "editFallbacks": {
+    "message": "Fallback selectors"
+  },
+  "editFallbacksHint": {
+    "message": "One per line. Used only when the main selector matches nothing."
+  },
+  "editEnabled": {
+    "message": "Rule enabled"
+  },
+  "editSave": {
+    "message": "Save changes"
+  },
+  "editInvalidSelector": {
+    "message": "\"$p1$\" is not a valid selector.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleErrNoId": {
+    "message": "The rule has no id."
+  },
+  "ruleErrNoHostname": {
+    "message": "A website (hostname) is required."
+  },
+  "ruleErrBadHostname": {
+    "message": "\"$p1$\" is not a valid hostname.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleErrNoSelector": {
+    "message": "A selector is required."
+  },
+  "ruleErrPathSlash": {
+    "message": "The path must start with \"/\"."
+  },
+  "hideScopeSite": {
+    "message": "Applies to every page of $p1$, and only to $p1$.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "hideScopePage": {
+    "message": "This element has no stable identifier, so the rule applies to this page only."
+  },
+  "hideScopeMixed": {
+    "message": "Hiding similar elements applies to every page of $p1$. Hiding only this one applies to this page only (no stable identifier).",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "hideToastHidden": {
+    "message": "Element hidden"
+  },
+  "hideToastFailed": {
+    "message": "Could not hide this element."
+  },
+  "toastUndo": {
+    "message": "Undo"
+  },
+  "toastRestored": {
+    "message": "Element restored"
+  },
+  "toastNothingToUndo": {
+    "message": "Nothing to undo"
+  },
+  "modalTitle": {
+    "message": "Hide this element?"
+  },
+  "modalText": {
+    "message": "It will stay hidden on $p1$ until you restore it in the extension settings.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "modalSimilar_one": {
+    "message": "Also hide $p1$ similar element (dashed outline on the page)",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "modalSimilar_other": {
+    "message": "Also hide $p1$ similar elements (dashed outline on the page)",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "modalConfirm": {
+    "message": "Yes, hide it"
+  },
+  "bannerText": {
+    "message": "Click an element to hide it"
+  },
+  "bannerCancel": {
+    "message": "Cancel (Esc)"
+  }
+}

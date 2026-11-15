@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Element Hider – manual test page</title>
+    <link rel="stylesheet" href="test-page.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top-bar" data-testid="top-bar">
+      <strong>Test Site</strong>
+      <nav aria-label="Main navigation">
+        <a href="#home" data-count>Home</a>
+        <a href="#pricing" data-count>Pricing</a>
+        <a href="https://example.org/" data-count>External link</a>
+      </nav>
+      <span class="counter">Page actions triggered: <b id="action-count">0</b></span>
+    </header>
+
+    <main class="layout">
+      <article class="content">
+        <h1>Page Element Hider – manual test page</h1>
+        <p>Serve this folder over HTTP (see README) and load the extension. While in selection mode, clicking links, buttons and the form below must <em>not</em> change the counter.</p>
+
+        <section class="case">
+          <h2>1. Interactive elements (must not fire while selecting)</h2>
+          <button class="btn" data-count>Click me</button>
+          <form id="demo-form">
+            <input name="q" placeholder="Search…" />
+            <button type="submit">Submit form</button>
+          </form>
+        </section>
+
+        <section class="case">
+          <h2>2. Duplicate elements</h2>
+          <div class="promo">Promo A – buy now</div>
+          <div class="promo">Promo B – limited offer</div>
+          <div class="promo">Promo C – subscribe</div>
+        </section>
+
+        <section class="case">
+          <h2>3. Generated class names and ids</h2>
+          <div id="generated-widget" class="css-1x2y3z Header_title__a8Fk2">Widget with random id/class (re-generated on every load)</div>
+        </section>
+
+        <section class="case">
+          <h2>4. Elements added after load</h2>
+          <button class="btn" id="add-ad">Insert banner</button>
+          <button class="btn" id="toggle-ad">Remove / re-add banner</button>
+          <div id="dynamic-slot"></div>
+        </section>
+
+        <section class="case">
+          <h2>5. Single-page app navigation</h2>
+          <p>Current path: <code id="spa-path"></code></p>
+          <button class="btn" data-route="/test/spa/one">Go to /one</button>
+          <button class="btn" data-route="/test/spa/two">Go to /two</button>
+          <div id="spa-view"></div>
+        </section>
+
+        <section class="case">
+          <h2>6. Shadow DOM</h2>
+          <shadow-widget></shadow-widget>
+          <p class="muted">The widget above uses an <b>open</b> shadow root (supported). The one below uses a <b>closed</b> root (not supported – only its host can be selected).</p>
+          <closed-widget></closed-widget>
+        </section>
+
+        <section class="case">
+          <h2>7. Iframes</h2>
+          <iframe id="frame-same" src="frame.html" title="Same-origin frame" height="130"></iframe>
+          <iframe id="frame-cross" title="Cross-origin frame" height="130"></iframe>
+        </section>
+
+        <section class="case">
+          <h2>8. Card with interactive children</h2>
+          <div class="card" data-testid="product-card">
+            <strong>Product</strong>
+            <a href="#buy" data-count>Buy</a>
+            <button class="btn" data-count>Add to cart</button>
+          </div>
+        </section>
+      </article>
+
+      <aside class="sidebar" data-testid="sidebar">
+        <h3>Sidebar</h3>
+        <p>Related articles…</p>
+      </aside>
+    </main>
+
+    <div id="cookie-banner" class="cookie-banner">
+      We use cookies. <button class="btn" data-count>Accept</button>
+    </div>
+    <div class="chat-bubble" aria-label="Chat with us">💬</div>
+
+    <script type="module" src="test-page.js"></script>
+  </body>
+</html>

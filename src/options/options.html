@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-doc-title="optionsTitle">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Element Hider – Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-header">
+        <img src="../../assets/icons/icon48.png" alt="" width="36" height="36" />
+        <div>
+          <h1>Page Element Hider</h1>
+          <p class="muted" id="summary"></p>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="Controls" data-i18n-aria-label="optionsControls">
+        <label class="switch-row">
+          <input id="global-toggle" class="switch" type="checkbox" role="switch" />
+          <span>
+            <strong data-i18n="optionsHidingOn">Hiding is on</strong>
+            <span class="muted block" data-i18n="optionsHidingOnHint">Turn off to temporarily show every hidden element on every website. Your rules are kept.</span>
+          </span>
+        </label>
+
+        <div class="toolbar-row">
+          <input id="search" class="input" type="search" placeholder="Search by website, description or selector…" aria-label="Search rules" data-i18n-placeholder="optionsSearchPlaceholder" data-i18n-aria-label="optionsSearchLabel" />
+          <button id="export-rules" class="button" type="button" data-i18n="optionsExport">Export rules</button>
+          <button id="import-rules" class="button" type="button" data-i18n="optionsImport">Import rules…</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden />
+          <button id="delete-all" class="button button-danger" type="button" data-i18n="optionsDeleteAll">Delete all rules…</button>
+        </div>
+      </section>
+
+      <div id="disabled-banner" class="banner" hidden data-i18n="optionsDisabledBanner">
+        Hiding is currently switched off. Hidden elements are visible again until you turn it back on.
+      </div>
+
+      <main id="rule-list" aria-live="polite"></main>
+    </div>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

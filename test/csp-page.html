@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-src 'none'" />
+    <title>Page Element Hider – strict CSP test</title>
+    <link rel="stylesheet" href="test-page.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <article class="content">
+        <h1>Strict Content-Security-Policy page</h1>
+        <p>This page forbids inline styles and scripts. Hiding and the in-page UI must still work.</p>
+        <div class="promo" data-testid="csp-promo">Hide me (strict CSP)</div>
+        <div class="card">Another element</div>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding-bottom: 90px; font: 15px/1.5 system-ui, sans-serif; color: #222; background: #fafafa; }
+.site-header { position: sticky; top: 0; z-index: 10; display: flex; gap: 20px; align-items: center; padding: 10px 20px; background: #1f2937; color: #fff; }
+.site-header a { color: #93c5fd; margin-right: 12px; }
+.counter { margin-left: auto; }
+.layout { display: grid; grid-template-columns: 1fr 220px; gap: 20px; max-width: 1000px; margin: 0 auto; padding: 20px; }
+.case { margin-bottom: 18px; padding: 14px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+.case h2 { margin: 0 0 10px; font-size: 16px; }
+.btn { padding: 6px 12px; cursor: pointer; }
+.promo { margin: 6px 0; padding: 10px; background: #fef3c7; border: 1px solid #f59e0b; }
+.card { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid #ccc; border-radius: 8px; }
+.sidebar { padding: 14px; background: #e0f2fe; border-radius: 8px; align-self: start; }
+.cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; padding: 14px 20px; background: #111827; color: #fff; z-index: 20; }
+.chat-bubble { position: fixed; right: 20px; bottom: 80px; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: #2563eb; color: #fff; font-size: 24px; z-index: 15; }
+.dynamic-ad { margin-top: 10px; padding: 14px; background: #fce7f3; border: 1px dashed #db2777; }
+.spa-banner { margin-top: 10px; padding: 12px; background: #dcfce7; border: 1px solid #16a34a; }
+iframe { width: 49%; border: 1px solid #aaa; }
+.muted { color: #666; font-size: 13px; }
+code { background: #eee; padding: 1px 5px; border-radius: 4px; }
