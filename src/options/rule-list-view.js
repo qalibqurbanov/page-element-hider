@@ -3,6 +3,26 @@ import { currentLanguage, t, tn } from '../shared/i18n.js';
 import { describePathContext } from '../shared/url-matcher.js';
 import { icon } from './icons.js';
 
+const NAME_SEPARATOR = ' — ';
+
+/**
+ * Rules created by picking an element are named "<element label> — <visible text>"
+ * (see buildDescription). Show the visible text as the title and the element label as a
+ * small code chip, instead of one string joined by a dash. Names without that shape
+ * (typed by the user) are shown as they are.
+ */
+function renderTitle(rule) {
+  const name = rule.description;
+  const index = name.indexOf(NAME_SEPARATOR);
+  const label = index > 0 ? name.slice(0, index).trim() : '';
+  const content = index > 0 ? name.slice(index + NAME_SEPARATOR.length).trim() : '';
+
+  if (label && content) {
+    return h('p', { class: 'rule-title', title: name }, h('span', { class: 'rule-name', text: content }), h('code', { class: 'rule-tag', text: label }));
+  }
+  return h('p', { class: 'rule-title', title: name || undefined }, h('span', { class: 'rule-name', text: name || t('listNoDescription') }));
+}
+
 /** Icon-only button; the tooltip doubles as the accessible name. */
 function iconButton(name, label, onClick, danger = false) {
   return h('button', { class: `icon-btn${danger ? ' icon-btn-danger' : ''}`, type: 'button', title: label, 'aria-label': label, onClick }, icon(name));
@@ -72,12 +92,12 @@ export class RuleListView {
               class: 'switch',
               type: 'checkbox',
               role: 'switch',
+              'aria-label': t('listSiteActive'),
               checked: isActive,
               onChange: (event) => this.#handlers.onToggleSite(hostname, event.target.checked),
             }),
-            h('span', { text: t('listSiteActive') }),
           ),
-          iconButton('trash', t('listRemoveAllTip'), () => this.#handlers.onDeleteSite(hostname, rules.length), true),
+          iconButton('trash-stack', t('listRemoveAllTip'), () => this.#handlers.onDeleteSite(hostname, rules.length), true),
         ),
       ),
       rules.map((rule) => this.#renderRule(rule)),
@@ -103,7 +123,7 @@ export class RuleListView {
       h(
         'div',
         { class: 'rule-body' },
-        h('p', { class: 'rule-title', text: rule.description || t('listNoDescription'), title: rule.description }),
+        renderTitle(rule),
         h('p', { class: 'rule-meta', text: t('listMeta', scope, createdShort), title: t('listMetaTip', createdLong, rule.createdOnPath) }),
         h('code', { class: 'rule-selector', text: rule.selector, title: rule.selector }),
         rule.fallbackSelectors.length > 0 &&
