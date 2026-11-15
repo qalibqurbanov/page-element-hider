@@ -2,7 +2,7 @@ import { api } from '../shared/browser-api.js';
 import { MESSAGE_TYPES, RELAY_TARGETS, TOP_FRAME_ID } from '../shared/constants.js';
 import { listenForMessages, trySendToTab } from '../shared/messaging.js';
 import { toggleSelectionMode } from '../shared/selection-control.js';
-import { t } from '../shared/i18n.js';
+import { initI18n, t } from '../shared/i18n.js';
 import { SettingsStore } from '../storage/settings-store.js';
 
 /**
@@ -66,6 +66,7 @@ async function getActiveTabId() {
 
 async function updateBadge() {
   try {
+    await initI18n(); // the badge text follows the language setting
     const { enabled } = await settingsStore.get();
     await api.action.setBadgeText({ text: enabled ? '' : t('badgeOff') });
     if (!enabled) await api.action.setBadgeBackgroundColor({ color: BADGE_OFF_COLOR });

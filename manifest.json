@@ -32,7 +32,8 @@
         "src/content/ui/*",
         "src/selectors/*",
         "src/shared/*",
-        "src/storage/*"
+        "src/storage/*",
+        "_locales/*/messages.json"
       ],
       "matches": ["http://*/*", "https://*/*"]
     }

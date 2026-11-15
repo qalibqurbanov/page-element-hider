@@ -9,7 +9,7 @@ export const EXTENSION_NAME = 'Page Element Hider';
 export const STORAGE_KEYS = Object.freeze({
   /** Record<ruleId, HiddenRule> */
   RULES: 'rules',
-  /** { enabled: boolean, pausedHostnames: string[] } */
+  /** { enabled: boolean, pausedHostnames: string[], language: 'auto' | 'en' | 'ru' | 'az' } */
   SETTINGS: 'settings',
   /** { ruleIds: string[], at: number } - what the "Undo" button removes */
   LAST_HIDE: 'lastHide',
@@ -18,6 +18,7 @@ export const STORAGE_KEYS = Object.freeze({
 export const DEFAULT_SETTINGS = Object.freeze({
   enabled: true,
   pausedHostnames: [],
+  language: 'auto',
 });
 
 /**

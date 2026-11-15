@@ -1,4 +1,5 @@
 import { DEFAULT_SETTINGS, STORAGE_KEYS } from '../shared/constants.js';
+import { AUTO_LANGUAGE, LANGUAGES } from '../shared/i18n.js';
 import { normalizeHostname } from '../shared/url-matcher.js';
 import { readValue, subscribeToKeys, writeValues } from './storage-area.js';
 
@@ -6,6 +7,7 @@ import { readValue, subscribeToKeys, writeValues } from './storage-area.js';
  * Global switches:
  *  - `enabled`: master switch ("temporarily disable all hiding rules")
  *  - `pausedHostnames`: websites where hiding is paused (rules are kept, just not applied)
+ *  - `language`: 'auto' (follow the browser) or a supported language code
  */
 export class SettingsStore {
   async get() {
@@ -15,12 +17,18 @@ export class SettingsStore {
       pausedHostnames: Array.isArray(stored.pausedHostnames)
         ? [...new Set(stored.pausedHostnames.map(normalizeHostname).filter(Boolean))]
         : [...DEFAULT_SETTINGS.pausedHostnames],
+      language: LANGUAGES.some((language) => language.code === stored.language) ? stored.language : AUTO_LANGUAGE,
     };
   }
 
   async setEnabled(enabled) {
     const settings = await this.get();
     await this.#save({ ...settings, enabled });
+  }
+
+  async setLanguage(language) {
+    const settings = await this.get();
+    await this.#save({ ...settings, language });
   }
 
   async setSitePaused(hostname, paused) {

@@ -1,6 +1,6 @@
 import { MESSAGE_TYPES, RELAY_TARGETS, TIMING } from '../shared/constants.js';
 import { listenForMessages, sendToBackground } from '../shared/messaging.js';
-import { t } from '../shared/i18n.js';
+import { initI18n, t } from '../shared/i18n.js';
 import { getPageContext } from '../shared/url-matcher.js';
 import { RuleStore } from '../storage/rule-store.js';
 import { SettingsStore } from '../storage/settings-store.js';
@@ -67,6 +67,7 @@ export class ContentApp {
     // Listen first so popup messages that arrive during the async storage read are not lost.
     listenForMessages((message) => this.#handleMessage(message));
 
+    await initI18n();
     await this.#reload();
     this.#ruleStore.onChange(() => this.#reload());
     this.#settingsStore.onChange(() => this.#reload());
@@ -84,6 +85,7 @@ export class ContentApp {
     const [rules, settings] = await Promise.all([
       this.#ruleStore.getForHostname(this.#page.hostname),
       this.#settingsStore.get(),
+      initI18n(), // picks up a language change made in Settings
     ]);
     this.#rules = rules;
     this.#settings = settings;
