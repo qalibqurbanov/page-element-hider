@@ -1,9 +1,11 @@
 import { api } from '../shared/browser-api.js';
 import { getSelectionState, setSelectionMode } from '../shared/selection-control.js';
-import { localizeDocument, t, tn } from '../shared/i18n.js';
+import { initI18n, localizeDocument, t, tn } from '../shared/i18n.js';
 import { parsePageUrl } from '../shared/url-matcher.js';
 import { RuleStore } from '../storage/rule-store.js';
 import { SettingsStore } from '../storage/settings-store.js';
+
+await initI18n();
 
 const MESSAGES = Object.freeze({
   UNSUPPORTED_PAGE: t('popupUnsupported'),
@@ -76,7 +78,7 @@ async function render() {
   elements.enabledToggle.checked = settings.enabled;
   elements.siteToggle.disabled = !page;
   elements.siteToggle.checked = page ? !settings.pausedHostnames.includes(page.hostname) : false;
-  elements.siteName.textContent = page ? page.hostname : t('popupSiteActiveGeneric');
+  elements.siteName.textContent = page ? page.hostname : t('popupNoSite');
   elements.siteTile.textContent = page ? page.hostname[0].toUpperCase() : '–';
 
   const isActiveHere = Boolean(page) && SettingsStore.isActiveFor(settings, page.hostname);
