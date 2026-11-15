@@ -136,9 +136,6 @@
   "backupDeleteTip": {
     "message": "Removes every rule on every site. Hidden elements will show again."
   },
-  "backupDeleteButton": {
-    "message": "Delete all…"
-  },
   "aboutVersion": {
     "message": "Version $p1$",
     "placeholders": {

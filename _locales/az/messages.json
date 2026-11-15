@@ -136,9 +136,6 @@
   "backupDeleteTip": {
     "message": "Bütün saytlardakı bütün qaydaları silir. Gizli elementlər yenidən görünəcək."
   },
-  "backupDeleteButton": {
-    "message": "Hamısını sil…"
-  },
   "aboutVersion": {
     "message": "Versiya $p1$",
     "placeholders": {

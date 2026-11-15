@@ -136,9 +136,6 @@
   "backupDeleteTip": {
     "message": "Удаляет все правила на всех сайтах. Скрытые элементы снова появятся."
   },
-  "backupDeleteButton": {
-    "message": "Удалить все…"
-  },
   "aboutVersion": {
     "message": "Версия $p1$",
     "placeholders": {

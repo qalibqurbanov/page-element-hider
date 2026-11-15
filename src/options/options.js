@@ -6,6 +6,7 @@ import { RuleStore } from '../storage/rule-store.js';
 import { MAX_IMPORT_BYTES, buildExport, exportFileName, parseImport } from '../storage/rule-transfer.js';
 import { SettingsStore } from '../storage/settings-store.js';
 import { confirmAction } from './confirm-dialog.js';
+import { icon } from './icons.js';
 import { editRule } from './rule-edit-dialog.js';
 import { RuleListView } from './rule-list-view.js';
 
@@ -34,6 +35,8 @@ const elements = {
   aboutVersion: document.getElementById('about-version'),
   list: document.getElementById('rule-list'),
 };
+
+elements.deleteAll.replaceChildren(icon('trash-stack', 18));
 
 const state = { rules: [], settings: { enabled: true, pausedHostnames: [] }, query: '' };
 
