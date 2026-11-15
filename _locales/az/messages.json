@@ -1,48 +1,54 @@
 {
+  "extName": {
+    "message": "Page Element Hider"
+  },
+  "extDescription": {
+    "message": "Səhifədən element seçin və həmin saytda həmişəlik gizlədin. Qaydalar lokal saxlanılır."
+  },
+  "cmdToggleSelection": {
+    "message": "Element seçməyi başlat və ya dayandır"
+  },
+  "badgeOff": {
+    "message": "SÖN"
+  },
   "popupSectionExtension": {
     "message": "Genişlənmə"
   },
   "popupSectionSite": {
-    "message": "Cari sayt"
+    "message": "Bu sayt"
   },
   "popupHidingTitle": {
     "message": "Gizlətmə"
   },
   "popupHidingSub": {
-    "message": "Bütün saytlarda"
+    "message": "Bütün saytlar"
   },
-  "extName": {
-    "message": "Page Element Hider"
+  "popupHidingTip": {
+    "message": "Bütün saytlarda gizli elementləri göstərmək üçün söndürün. Qaydalar saxlanılır."
   },
-  "extDescription": {
-    "message": "Veb-səhifədəki istənilən elementi seçin və həmin saytda həmişəlik gizlədin. Qaydalar lokal saxlanılır və avtomatik tətbiq olunur."
-  },
-  "cmdToggleSelection": {
-    "message": "Gizlədiləcək elementin seçilməsini başlat və ya dayandır"
-  },
-  "badgeOff": {
-    "message": "SÖN"
-  },
-  "popupEnabled": {
-    "message": "Aktivdir"
+  "popupSiteTip": {
+    "message": "Gizlətməni yalnız bu saytda dayandırın. Qaydalar saxlanılır."
   },
   "popupSelect": {
-    "message": "Gizlədiləcək elementi seç"
+    "message": "Element seç"
+  },
+  "popupSelectTip": {
+    "message": "Sonra gizlətmək üçün səhifədə elementə klikləyin. Qısa yol: Alt+Shift+H."
   },
   "popupExitSelect": {
-    "message": "Seçim rejimindən çıx"
+    "message": "Seçimi dayandır"
   },
-  "popupSiteActiveGeneric": {
-    "message": "Bu saytda aktivdir"
+  "popupNoSite": {
+    "message": "Sayt yoxdur"
   },
   "popupOpenSettings": {
-    "message": "Parametrləri aç"
+    "message": "Parametrlər"
   },
   "popupUnsupported": {
-    "message": "Bu səhifəni dəyişmək olmur (yalnız http və https saytları dəstəklənir)."
+    "message": "Bu səhifədə əlçatan deyil."
   },
   "popupReload": {
-    "message": "Page Element Hider-i burada aktivləşdirmək üçün səhifəni bir dəfə yeniləyin."
+    "message": "Səhifəni yeniləyin və yenidən cəhd edin."
   },
   "popupError": {
     "message": "Nə isə səhv getdi. Pəncərəni yenidən açın."
@@ -50,32 +56,17 @@
   "optionsTitle": {
     "message": "Page Element Hider – Parametrlər"
   },
-  "optionsControls": {
-    "message": "İdarəetmə"
+  "settingsHeading": {
+    "message": "Parametrlər"
   },
-  "optionsHidingOn": {
-    "message": "Gizlətmə aktivdir"
+  "settingsLanguage": {
+    "message": "Dil"
   },
-  "optionsHidingOnHint": {
-    "message": "Bütün saytlarda gizli elementləri müvəqqəti göstərmək üçün söndürün. Qaydalarınız saxlanılır."
+  "settingsLanguageTip": {
+    "message": "Genişlənmənin dili."
   },
-  "optionsSearchPlaceholder": {
-    "message": "Sayt, təsvir və ya selektor üzrə axtar…"
-  },
-  "optionsSearchLabel": {
-    "message": "Qaydalarda axtar"
-  },
-  "optionsDeleteAll": {
-    "message": "Bütün qaydaları sil…"
-  },
-  "optionsExport": {
-    "message": "Qaydaları ixrac et"
-  },
-  "optionsImport": {
-    "message": "Qaydaları idxal et…"
-  },
-  "optionsDisabledBanner": {
-    "message": "Gizlətmə hazırda söndürülüb. Yenidən aktiv edənə qədər gizli elementlər görünür."
+  "langAuto": {
+    "message": "Avto"
   },
   "optionsSummary": {
     "message": "Qaydalar: $p1$ · Saytlar: $p2$",
@@ -88,11 +79,97 @@
       }
     }
   },
+  "optionsSearchPlaceholder": {
+    "message": "Qaydalarda axtar…"
+  },
+  "optionsSearchLabel": {
+    "message": "Qaydalarda axtar"
+  },
+  "rulesAdd": {
+    "message": "Əlavə et"
+  },
+  "rulesAddTip": {
+    "message": "Qaydanı özünüz yaradın: sayt və CSS selektoru daxil edin."
+  },
+  "settingsTabRules": {
+    "message": "Qaydalar"
+  },
+  "settingsTabBackup": {
+    "message": "Ehtiyat"
+  },
+  "settingsTabAbout": {
+    "message": "Haqqında"
+  },
+  "backupExportTitle": {
+    "message": "İxrac"
+  },
+  "backupExportDesc": {
+    "message": "Qaydaları fayla yaz."
+  },
+  "backupExportTip": {
+    "message": "Bütün qaydaları JSON faylı kimi yükləyir. Ehtiyat nüsxə kimi saxlayın və ya paylaşın."
+  },
+  "backupExportButton": {
+    "message": "İxrac et"
+  },
+  "backupImportTitle": {
+    "message": "İdxal"
+  },
+  "backupImportDesc": {
+    "message": "Fayldan qaydaları yüklə."
+  },
+  "backupImportTip": {
+    "message": "Əvvəl saxlanmış fayldan qaydalar əlavə edir. Artıq olanlar keçilir."
+  },
+  "backupImportButton": {
+    "message": "Fayl seç…"
+  },
+  "backupDangerLabel": {
+    "message": "Təhlükəli zona"
+  },
+  "backupDeleteTitle": {
+    "message": "Bütün qaydaları sil"
+  },
+  "backupDeleteDesc": {
+    "message": "Geri qaytarmaq olmaz."
+  },
+  "backupDeleteTip": {
+    "message": "Bütün saytlardakı bütün qaydaları silir. Gizli elementlər yenidən görünəcək."
+  },
+  "backupDeleteButton": {
+    "message": "Hamısını sil…"
+  },
+  "aboutVersion": {
+    "message": "Versiya $p1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "aboutShortcutTitle": {
+    "message": "Qısa yol"
+  },
+  "aboutShortcutDesc": {
+    "message": "Element seçimi"
+  },
+  "aboutShortcutTip": {
+    "message": "Cari səhifədə element seçimini başladır və ya dayandırır. Düymələri brauzerin qısa yol parametrlərində dəyişə bilərsiniz."
+  },
+  "aboutPrivacyTitle": {
+    "message": "Məxfilik"
+  },
+  "aboutPrivacyDesc": {
+    "message": "Qaydalar brauzerdə qalır."
+  },
+  "aboutPrivacyTip": {
+    "message": "Heç nə kənara göndərilmir. Qaydalar yalnız brauzerinizdə saxlanılır."
+  },
   "transferImportTitle": {
     "message": "İdxal tamamlandı"
   },
   "transferImportResult": {
-    "message": "Əlavə edildi: $p1$ · Təkrarlanan keçildi: $p2$ · Yanlış keçildi: $p3$",
+    "message": "Əlavə edildi: $p1$ · Təkrar: $p2$ · Yanlış: $p3$",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -109,7 +186,7 @@
     "message": "İdxal alınmadı"
   },
   "transferInvalidFile": {
-    "message": "Bu fayl etibarlı Page Element Hider ixracı deyil."
+    "message": "Qaydalar faylı yanlışdır."
   },
   "transferTooLarge": {
     "message": "Fayl çox böyükdür."
@@ -118,7 +195,7 @@
     "message": "Faylda qayda yoxdur."
   },
   "transferNothingToExport": {
-    "message": "İxrac etmək üçün hələ qayda yoxdur."
+    "message": "İxrac üçün qayda yoxdur."
   },
   "transferExportFailedTitle": {
     "message": "İxrac alınmadı"
@@ -133,24 +210,24 @@
     "message": "Nə isə səhv getdi"
   },
   "deleteRuleTitle": {
-    "message": "Bu qayda silinsin?"
+    "message": "Qayda silinsin?"
   },
   "deleteRuleMessage": {
-    "message": "$p2$ saytında \"$p1$\" yenidən göstəriləcək.",
+    "message": "\"$p1$\" $p2$ saytında yenidən görünəcək.",
     "placeholders": {
-      "p2": {
-        "content": "$2"
-      },
       "p1": {
         "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
       }
     }
   },
   "deleteRuleConfirm": {
-    "message": "Qaydanı sil"
+    "message": "Sil"
   },
   "deleteSiteTitle": {
-    "message": "$p1$ üçün bütün qaydalar silinsin?",
+    "message": "$p1$ üçün qaydalar silinsin?",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -158,7 +235,7 @@
     }
   },
   "deleteSiteMessage_one": {
-    "message": "$p1$ qayda həmişəlik silinəcək və $p2$ saytındakı bütün gizli elementlər yenidən görünəcək.",
+    "message": "$p1$ qayda silinəcək. $p2$ saytındakı gizli elementlər yenidən görünəcək.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -169,7 +246,7 @@
     }
   },
   "deleteSiteMessage_other": {
-    "message": "$p1$ qayda həmişəlik silinəcək və $p2$ saytındakı bütün gizli elementlər yenidən görünəcək.",
+    "message": "$p1$ qayda silinəcək. $p2$ saytındakı gizli elementlər yenidən görünəcək.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -180,7 +257,7 @@
     }
   },
   "deleteSiteWarning": {
-    "message": "Bu əməliyyatı geri qaytarmaq olmaz."
+    "message": "Geri qaytarmaq olmaz."
   },
   "deleteSiteConfirm_one": {
     "message": "$p1$ qaydanı sil",
@@ -202,7 +279,7 @@
     "message": "Bütün qaydalar silinsin?"
   },
   "deleteAllMessage": {
-    "message": "Bütün qaydalar həmişəlik silinəcək və bütün gizli elementlər yenidən görünəcək. Qaydalar: $p1$ · Saytlar: $p2$",
+    "message": "Gizli elementlər yenidən görünəcək. Qaydalar: $p1$ · Saytlar: $p2$",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -213,7 +290,7 @@
     }
   },
   "deleteAllWarning": {
-    "message": "Bu əməliyyatı geri qaytarmaq olmaz. Gizlətməni müvəqqəti dayandırmaq üçün \"$p1$\" açarından istifadə edin.",
+    "message": "Geri qaytarmaq olmaz. Sadəcə dayandırmaq üçün \"$p1$\" açarını söndürün.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -221,19 +298,19 @@
     }
   },
   "deleteAllConfirm": {
-    "message": "Bütün qaydaları sil"
+    "message": "Hamısını sil"
   },
   "listEmptyTitle": {
-    "message": "Hələ gizli element yoxdur"
+    "message": "Hələ qayda yoxdur"
   },
   "listEmptyText": {
-    "message": "İstənilən saytda genişlənmə pəncərəsini açın və \"Gizlədiləcək elementi seç\" düyməsini basın."
+    "message": "İstənilən səhifədə element seçin və ya \"Əlavə et\" düyməsini basın."
   },
   "listNoMatchTitle": {
-    "message": "Axtarışa uyğun qayda tapılmadı"
+    "message": "Heç nə tapılmadı"
   },
   "listNoMatchText": {
-    "message": "Başqa sayt, təsvir və ya selektor yoxlayın."
+    "message": "Başqa sorğu yoxlayın."
   },
   "listRuleCount_one": {
     "message": "$p1$ qayda",
@@ -252,52 +329,58 @@
     }
   },
   "listSiteActive": {
-    "message": "Bu saytda aktivdir"
+    "message": "Aktiv"
   },
-  "listRemoveAll": {
-    "message": "Bu saytın hamısını sil…"
+  "listSiteActiveTip": {
+    "message": "Bu saytdakı bütün qaydaları dayandırmaq üçün söndürün."
+  },
+  "listRemoveAllTip": {
+    "message": "Bu saytın bütün qaydalarını sil."
   },
   "listRuleEnabled": {
-    "message": "Qayda aktivdir"
+    "message": "Aktiv"
   },
   "listNoDescription": {
-    "message": "(təsvir yoxdur)"
+    "message": "(adsız)"
   },
   "listMeta": {
-    "message": "$p1$ · $p3$ səhifəsində $p2$ tarixində yaradılıb",
+    "message": "$p1$ · $p2$",
     "placeholders": {
       "p1": {
         "content": "$1"
-      },
-      "p3": {
-        "content": "$3"
       },
       "p2": {
         "content": "$2"
       }
     }
   },
+  "listMetaTip": {
+    "message": "$p2$ səhifəsində $p1$ tarixində yaradılıb",
+    "placeholders": {
+      "p2": {
+        "content": "$2"
+      },
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
   "listSubdomainsSuffix": {
-    "message": " · alt domenlər daxil"
+    "message": " + alt domenlər"
   },
-  "listFallbacks_one": {
-    "message": "$p1$ ehtiyat selektor",
+  "listFallbacks": {
+    "message": "Ehtiyat: $p1$",
     "placeholders": {
       "p1": {
         "content": "$1"
       }
     }
   },
-  "listFallbacks_other": {
-    "message": "$p1$ ehtiyat selektor",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      }
-    }
+  "listFallbacksTip": {
+    "message": "Yalnız əsas selektor heç nə tapmadıqda istifadə olunur."
   },
   "listEdit": {
-    "message": "Redaktə et"
+    "message": "Redaktə"
   },
   "listDelete": {
     "message": "Sil"
@@ -314,7 +397,7 @@
     }
   },
   "pathPattern": {
-    "message": "$p1$ şablonuna uyğun yollar",
+    "message": "Şablon $p1$",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -324,56 +407,71 @@
   "editTitle": {
     "message": "Qaydanı redaktə et"
   },
+  "editAddTitle": {
+    "message": "Yeni qayda"
+  },
+  "editAdd": {
+    "message": "Əlavə et"
+  },
+  "editSave": {
+    "message": "Saxla"
+  },
   "editDescription": {
-    "message": "Təsvir"
+    "message": "Ad"
+  },
+  "editDescriptionTip": {
+    "message": "Qaydanı tanımaq üçün etiket. İstəyə bağlı."
   },
   "editHostname": {
-    "message": "Sayt (host adı)"
+    "message": "Sayt"
   },
-  "editHostnameHint": {
-    "message": "Qayda həmişə yalnız bu sayta tətbiq olunur."
+  "editHostnameTip": {
+    "message": "Qayda yalnız bu saytda işləyir. Nümunə: example.com"
   },
   "editSubdomains": {
-    "message": "Alt domenlərdə də tətbiq et (məs., blog.example.com)"
+    "message": "Alt domenlər daxil"
+  },
+  "editSubdomainsTip": {
+    "message": "Alt domenlərdə də tətbiq et, məs., blog.example.com."
   },
   "editAppliesTo": {
-    "message": "Tətbiq olunur"
+    "message": "Səhifələr"
+  },
+  "editAppliesToTip": {
+    "message": "Qaydanın saytın hansı səhifələrində işlədiyi."
   },
   "editPathSite": {
-    "message": "Bütün sayt (bütün səhifələr)"
+    "message": "Bütün səhifələr"
   },
   "editPathExact": {
-    "message": "Yalnız bu dəqiq yol"
+    "message": "Bir yol"
   },
   "editPathPattern": {
-    "message": "Şablona uyğun yollar"
+    "message": "Yol şablonu"
   },
   "editPath": {
     "message": "Yol"
   },
   "editPathHintExact": {
-    "message": "Nümunə: /products/shoes (sorğu sətri və #hash nəzərə alınmır)"
+    "message": "məs. /shop/shoes"
   },
   "editPathHintPattern": {
-    "message": "Əvəzedici kimi * istifadə edin. Nümunə: /blog/*"
+    "message": "* əvəzedicidir, məs. /blog/*"
   },
   "editSelector": {
     "message": "Selektor"
   },
-  "editSelectorHint": {
-    "message": "Shadow root-a daxil olmaq üçün seqmentlər arasında \" >>> \" istifadə edin."
+  "editSelectorTip": {
+    "message": "Gizlədiləcək elementin CSS selektoru, məs. .banner və ya #ad. Məsləhət: açılan pəncərədə \"Element seç\" onu avtomatik yaradır. \" >>> \" shadow root-a daxil olur."
   },
   "editFallbacks": {
-    "message": "Ehtiyat selektorlar"
+    "message": "Ehtiyatlar"
   },
-  "editFallbacksHint": {
-    "message": "Hər sətirdə biri. Yalnız əsas selektor heç nə tapmadıqda istifadə olunur."
+  "editFallbacksTip": {
+    "message": "Əlavə selektorlar, hər sətirdə biri. Yalnız əsas selektor heç nə tapmadıqda istifadə olunur."
   },
   "editEnabled": {
-    "message": "Qayda aktivdir"
-  },
-  "editSave": {
-    "message": "Dəyişiklikləri saxla"
+    "message": "Aktiv"
   },
   "editInvalidSelector": {
     "message": "\"$p1$\" etibarlı selektor deyil.",
@@ -383,14 +481,20 @@
       }
     }
   },
+  "addDuplicateTitle": {
+    "message": "Artıq mövcuddur"
+  },
+  "addDuplicateMessage": {
+    "message": "Bu qayda artıq var."
+  },
   "ruleErrNoId": {
-    "message": "Qaydanın identifikatoru yoxdur."
+    "message": "Qaydanın id-si yoxdur."
   },
   "ruleErrNoHostname": {
-    "message": "Sayt (host adı) tələb olunur."
+    "message": "Sayt daxil edin."
   },
   "ruleErrBadHostname": {
-    "message": "\"$p1$\" etibarlı host adı deyil.",
+    "message": "\"$p1$\" etibarlı sayt deyil.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -398,13 +502,13 @@
     }
   },
   "ruleErrNoSelector": {
-    "message": "Selektor tələb olunur."
+    "message": "Selektor daxil edin."
   },
   "ruleErrPathSlash": {
     "message": "Yol \"/\" ilə başlamalıdır."
   },
   "hideScopeSite": {
-    "message": "$p1$ saytının bütün səhifələrinə və yalnız ona tətbiq olunur.",
+    "message": "$p1$ saytının bütün səhifələrinə tətbiq olunur.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -412,10 +516,10 @@
     }
   },
   "hideScopePage": {
-    "message": "Bu elementin sabit identifikatoru yoxdur, ona görə qayda yalnız bu səhifəyə tətbiq olunur."
+    "message": "Yalnız bu səhifə (sabit selektor yoxdur)."
   },
   "hideScopeMixed": {
-    "message": "Oxşar elementlərin gizlədilməsi $p1$ saytının bütün səhifələrinə tətbiq olunur. Yalnız bunun gizlədilməsi isə yalnız bu səhifəyə tətbiq olunur (sabit identifikator yoxdur).",
+    "message": "Oxşarlar: $p1$ saytının bütün səhifələri. Yalnız bu: bu səhifə.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -423,16 +527,16 @@
     }
   },
   "hideToastHidden": {
-    "message": "Element gizlədildi"
+    "message": "Gizlədildi"
   },
   "hideToastFailed": {
-    "message": "Bu elementi gizlətmək alınmadı."
+    "message": "Elementi gizlətmək alınmadı."
   },
   "toastUndo": {
     "message": "Geri al"
   },
   "toastRestored": {
-    "message": "Element bərpa olundu"
+    "message": "Bərpa olundu"
   },
   "toastNothingToUndo": {
     "message": "Geri alınacaq heç nə yoxdur"
@@ -441,7 +545,7 @@
     "message": "Bu element gizlədilsin?"
   },
   "modalText": {
-    "message": "Siz onu genişlənmə parametrlərində bərpa edənə qədər $p1$ saytında gizli qalacaq.",
+    "message": "Parametrlərdə bərpa edənə qədər $p1$ saytında gizli qalacaq.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -449,7 +553,7 @@
     }
   },
   "modalSimilar_one": {
-    "message": "$p1$ oxşar elementi də gizlət (səhifədə kəsik-kəsik haşiyə)",
+    "message": "$p1$ oxşar elementi də gizlət (kəsik-kəsik)",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -457,7 +561,7 @@
     }
   },
   "modalSimilar_other": {
-    "message": "$p1$ oxşar elementi də gizlət (səhifədə kəsik-kəsik haşiyə)",
+    "message": "$p1$ oxşar elementi də gizlət (kəsik-kəsik)",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -465,7 +569,7 @@
     }
   },
   "modalConfirm": {
-    "message": "Bəli, gizlət"
+    "message": "Gizlət"
   },
   "bannerText": {
     "message": "Gizlətmək üçün elementə klikləyin"

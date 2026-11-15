@@ -154,11 +154,11 @@ Cross-frame behaviour: pick the ad inside an iframe – the confirmation must ap
 
 ## Languages
 
-The UI follows the browser's UI language: English (default), Russian (`ru`) and Azerbaijani (`az`).
-Strings live in `_locales/<lang>/messages.json`; plural forms use `<key>_one/_few/_many/_other`.
-To add a language, copy `_locales/en` to a new folder named with its language code and translate it.
+English, Russian and Azerbaijani. Pick one in **Settings → Language** (or leave it on *Auto* to follow the browser).
+Strings live in `_locales/<lang>/messages.json` and are loaded by `src/shared/i18n.js`; plural forms use
+`<key>_one/_few/_many/_other`. To add a language, copy `_locales/en`, translate it, and add it to `LANGUAGES` in `i18n.js`.
 
-## Backup and sharing
+## Rules by hand, backup and sharing
 
-In the settings page, **Export rules** saves all rules to a JSON file and **Import rules…** loads one.
-Imported rules are validated, receive new ids, and rules identical to existing ones are skipped.
+In Settings, **Add rule** lets you create a rule yourself (site + CSS selector). The **Backup** tab exports all rules
+to a JSON file and imports one back; imported rules are validated, get new ids, and duplicates are skipped.

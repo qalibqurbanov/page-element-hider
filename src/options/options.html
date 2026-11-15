@@ -9,36 +9,94 @@
   <body>
     <div class="page">
       <header class="page-header">
-        <img src="../../assets/icons/icon48.png" alt="" width="36" height="36" />
-        <div>
-          <h1>Page Element Hider</h1>
+        <img src="../../assets/icons/icon48.png" alt="" width="40" height="40" />
+        <div class="page-heading">
+          <h1 data-i18n="settingsHeading">Settings</h1>
           <p class="muted" id="summary"></p>
         </div>
+        <label class="lang" data-i18n-title="settingsLanguageTip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" /></svg>
+          <select id="language-select" class="select" data-i18n-aria-label="settingsLanguage"></select>
+        </label>
+        <label class="master" data-i18n-title="popupHidingTip">
+          <span class="master-label" data-i18n="popupHidingTitle">Hiding</span>
+          <input id="global-toggle" class="switch" type="checkbox" role="switch" data-i18n-aria-label="popupHidingTitle" />
+        </label>
       </header>
 
-      <section class="toolbar" aria-label="Controls" data-i18n-aria-label="optionsControls">
-        <label class="switch-row">
-          <input id="global-toggle" class="switch" type="checkbox" role="switch" />
-          <span>
-            <strong data-i18n="optionsHidingOn">Hiding is on</strong>
-            <span class="muted block" data-i18n="optionsHidingOnHint">Turn off to temporarily show every hidden element on every website. Your rules are kept.</span>
-          </span>
-        </label>
+      <nav class="tabs" role="tablist">
+        <button class="tab" role="tab" id="tab-rules" data-tab="rules" aria-controls="panel-rules" type="button">
+          <span data-i18n="settingsTabRules">Rules</span><span id="rules-count" class="tab-count">0</span>
+        </button>
+        <button class="tab" role="tab" id="tab-backup" data-tab="backup" aria-controls="panel-backup" type="button" data-i18n="settingsTabBackup">Backup</button>
+        <button class="tab" role="tab" id="tab-about" data-tab="about" aria-controls="panel-about" type="button" data-i18n="settingsTabAbout">About</button>
+      </nav>
 
-        <div class="toolbar-row">
-          <input id="search" class="input" type="search" placeholder="Search by website, description or selector…" aria-label="Search rules" data-i18n-placeholder="optionsSearchPlaceholder" data-i18n-aria-label="optionsSearchLabel" />
-          <button id="export-rules" class="button" type="button" data-i18n="optionsExport">Export rules</button>
-          <button id="import-rules" class="button" type="button" data-i18n="optionsImport">Import rules…</button>
-          <input id="import-file" type="file" accept="application/json,.json" hidden />
-          <button id="delete-all" class="button button-danger" type="button" data-i18n="optionsDeleteAll">Delete all rules…</button>
+      <section class="tabpanel" id="panel-rules" role="tabpanel" aria-labelledby="tab-rules">
+        <div class="rules-toolbar">
+          <input id="search" class="input search" type="search" placeholder="Search rules…" aria-label="Search rules" data-i18n-placeholder="optionsSearchPlaceholder" data-i18n-aria-label="optionsSearchLabel" />
+          <button id="add-rule" class="button button-primary" type="button" data-i18n-title="rulesAddTip">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            <span data-i18n="rulesAdd">Add rule</span>
+          </button>
+        </div>
+        <div id="rule-list" aria-live="polite"></div>
+      </section>
+
+      <section class="tabpanel" id="panel-backup" role="tabpanel" aria-labelledby="tab-backup" hidden>
+        <div class="panel">
+          <div class="panel-row" data-i18n-title="backupExportTip">
+            <div class="panel-text">
+              <h2 data-i18n="backupExportTitle">Export</h2>
+              <p class="muted" data-i18n="backupExportDesc">Save rules to a file.</p>
+            </div>
+            <button id="export-rules" class="button" type="button" data-i18n="backupExportButton">Export</button>
+          </div>
+          <div class="panel-row" data-i18n-title="backupImportTip">
+            <div class="panel-text">
+              <h2 data-i18n="backupImportTitle">Import</h2>
+              <p class="muted" data-i18n="backupImportDesc">Load rules from a file.</p>
+            </div>
+            <button id="import-rules" class="button" type="button" data-i18n="backupImportButton">Choose file…</button>
+            <input id="import-file" type="file" accept="application/json,.json" hidden />
+          </div>
+        </div>
+
+        <h3 class="group-label danger-label" data-i18n="backupDangerLabel">Danger zone</h3>
+        <div class="panel panel-danger">
+          <div class="panel-row" data-i18n-title="backupDeleteTip">
+            <div class="panel-text">
+              <h2 data-i18n="backupDeleteTitle">Delete all rules</h2>
+              <p class="muted" data-i18n="backupDeleteDesc">This can't be undone.</p>
+            </div>
+            <button id="delete-all" class="button button-danger" type="button" data-i18n="backupDeleteButton">Delete all…</button>
+          </div>
         </div>
       </section>
 
-      <div id="disabled-banner" class="banner" hidden data-i18n="optionsDisabledBanner">
-        Hiding is currently switched off. Hidden elements are visible again until you turn it back on.
-      </div>
-
-      <main id="rule-list" aria-live="polite"></main>
+      <section class="tabpanel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" hidden>
+        <div class="panel">
+          <div class="panel-row">
+            <div class="panel-text">
+              <h2>Page Element Hider</h2>
+              <p class="muted" id="about-version"></p>
+            </div>
+          </div>
+          <div class="panel-row" data-i18n-title="aboutShortcutTip">
+            <div class="panel-text">
+              <h2 data-i18n="aboutShortcutTitle">Shortcut</h2>
+              <p class="muted" data-i18n="aboutShortcutDesc">Pick element</p>
+            </div>
+            <kbd>Alt + Shift + H</kbd>
+          </div>
+          <div class="panel-row" data-i18n-title="aboutPrivacyTip">
+            <div class="panel-text">
+              <h2 data-i18n="aboutPrivacyTitle">Privacy</h2>
+              <p class="muted" data-i18n="aboutPrivacyDesc">Rules stay in this browser.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <script type="module" src="options.js"></script>
   </body>

@@ -1,81 +1,72 @@
 {
+  "extName": {
+    "message": "Page Element Hider"
+  },
+  "extDescription": {
+    "message": "Выберите элемент на странице и скройте его на этом сайте навсегда. Правила хранятся локально."
+  },
+  "cmdToggleSelection": {
+    "message": "Начать или остановить выбор элемента"
+  },
+  "badgeOff": {
+    "message": "ВЫКЛ"
+  },
   "popupSectionExtension": {
     "message": "Расширение"
   },
   "popupSectionSite": {
-    "message": "Текущий сайт"
+    "message": "Этот сайт"
   },
   "popupHidingTitle": {
     "message": "Скрытие"
   },
   "popupHidingSub": {
-    "message": "На всех сайтах"
+    "message": "Все сайты"
   },
-  "extName": {
-    "message": "Page Element Hider"
+  "popupHidingTip": {
+    "message": "Выключите, чтобы показать все скрытые элементы на всех сайтах. Правила сохранятся."
   },
-  "extDescription": {
-    "message": "Выберите любой элемент на веб-странице и скройте его навсегда на этом сайте. Правила хранятся локально и применяются автоматически."
-  },
-  "cmdToggleSelection": {
-    "message": "Начать или остановить выбор элемента для скрытия"
-  },
-  "badgeOff": {
-    "message": "ВЫКЛ"
-  },
-  "popupEnabled": {
-    "message": "Включено"
+  "popupSiteTip": {
+    "message": "Приостановить скрытие только на этом сайте. Правила сохранятся."
   },
   "popupSelect": {
-    "message": "Выбрать элемент для скрытия"
+    "message": "Выбрать элемент"
+  },
+  "popupSelectTip": {
+    "message": "Затем щёлкните элемент на странице, чтобы скрыть его. Горячая клавиша: Alt+Shift+H."
   },
   "popupExitSelect": {
-    "message": "Выйти из режима выбора"
+    "message": "Отменить выбор"
   },
-  "popupSiteActiveGeneric": {
-    "message": "Работает на этом сайте"
+  "popupNoSite": {
+    "message": "Нет сайта"
   },
   "popupOpenSettings": {
-    "message": "Открыть настройки"
+    "message": "Настройки"
   },
   "popupUnsupported": {
-    "message": "Эту страницу нельзя изменить (поддерживаются только сайты http и https)."
+    "message": "Недоступно на этой странице."
   },
   "popupReload": {
-    "message": "Перезагрузите страницу один раз, чтобы активировать Page Element Hider."
+    "message": "Перезагрузите страницу и повторите."
   },
   "popupError": {
-    "message": "Что-то пошло не так. Попробуйте открыть окно заново."
+    "message": "Что-то пошло не так. Откройте окно заново."
   },
   "optionsTitle": {
     "message": "Page Element Hider – Настройки"
   },
-  "optionsControls": {
-    "message": "Управление"
+  "settingsHeading": {
+    "message": "Настройки"
   },
-  "optionsHidingOn": {
-    "message": "Скрытие включено"
+  "settingsLanguage": {
+    "message": "Язык"
   },
-  "optionsHidingOnHint": {
-    "message": "Выключите, чтобы временно показать все скрытые элементы на всех сайтах. Ваши правила сохранятся."
+  "settingsLanguageTip": {
+    "message": "Язык интерфейса расширения."
   },
-  "optionsSearchPlaceholder": {
-    "message": "Поиск по сайту, описанию или селектору…"
-  },
-  "optionsSearchLabel": {
-    "message": "Поиск правил"
-  },
-  "optionsDeleteAll": {
-    "message": "Удалить все правила…"
-  },
-  "optionsExport": {
-    "message": "Экспорт правил"
-  },
-  "optionsImport": {
-    "message": "Импорт правил…"
-  },
-  "optionsDisabledBanner": {
-    "message": "Скрытие сейчас выключено. Скрытые элементы снова видны, пока вы его не включите."
+  "langAuto": {
+    "message": "Авто"
   },
   "optionsSummary": {
     "message": "Правил: $p1$ · Сайтов: $p2$",
@@ -88,11 +79,97 @@
       }
     }
   },
+  "optionsSearchPlaceholder": {
+    "message": "Поиск правил…"
+  },
+  "optionsSearchLabel": {
+    "message": "Поиск правил"
+  },
+  "rulesAdd": {
+    "message": "Добавить"
+  },
+  "rulesAddTip": {
+    "message": "Создайте правило вручную: укажите сайт и CSS-селектор."
+  },
+  "settingsTabRules": {
+    "message": "Правила"
+  },
+  "settingsTabBackup": {
+    "message": "Бэкап"
+  },
+  "settingsTabAbout": {
+    "message": "О расширении"
+  },
+  "backupExportTitle": {
+    "message": "Экспорт"
+  },
+  "backupExportDesc": {
+    "message": "Сохранить правила в файл."
+  },
+  "backupExportTip": {
+    "message": "Скачивает все правила в JSON-файл. Используйте как резервную копию или поделитесь им."
+  },
+  "backupExportButton": {
+    "message": "Экспорт"
+  },
+  "backupImportTitle": {
+    "message": "Импорт"
+  },
+  "backupImportDesc": {
+    "message": "Загрузить правила из файла."
+  },
+  "backupImportTip": {
+    "message": "Добавляет правила из ранее сохранённого файла. Уже имеющиеся правила пропускаются."
+  },
+  "backupImportButton": {
+    "message": "Выбрать файл…"
+  },
+  "backupDangerLabel": {
+    "message": "Опасная зона"
+  },
+  "backupDeleteTitle": {
+    "message": "Удалить все правила"
+  },
+  "backupDeleteDesc": {
+    "message": "Это нельзя отменить."
+  },
+  "backupDeleteTip": {
+    "message": "Удаляет все правила на всех сайтах. Скрытые элементы снова появятся."
+  },
+  "backupDeleteButton": {
+    "message": "Удалить все…"
+  },
+  "aboutVersion": {
+    "message": "Версия $p1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "aboutShortcutTitle": {
+    "message": "Горячая клавиша"
+  },
+  "aboutShortcutDesc": {
+    "message": "Выбор элемента"
+  },
+  "aboutShortcutTip": {
+    "message": "Начинает или останавливает выбор элемента на текущей странице. Сочетание можно изменить в настройках быстрых клавиш браузера."
+  },
+  "aboutPrivacyTitle": {
+    "message": "Конфиденциальность"
+  },
+  "aboutPrivacyDesc": {
+    "message": "Правила остаются в браузере."
+  },
+  "aboutPrivacyTip": {
+    "message": "Ничего не отправляется наружу. Правила хранятся только в вашем браузере."
+  },
   "transferImportTitle": {
     "message": "Импорт завершён"
   },
   "transferImportResult": {
-    "message": "Добавлено: $p1$ · Дубликатов пропущено: $p2$ · Некорректных пропущено: $p3$",
+    "message": "Добавлено: $p1$ · Дубликаты: $p2$ · Некорректные: $p3$",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -109,7 +186,7 @@
     "message": "Не удалось импортировать"
   },
   "transferInvalidFile": {
-    "message": "Этот файл не является корректным экспортом Page Element Hider."
+    "message": "Неверный файл правил."
   },
   "transferTooLarge": {
     "message": "Файл слишком большой."
@@ -118,7 +195,7 @@
     "message": "В файле нет правил."
   },
   "transferNothingToExport": {
-    "message": "Пока нет правил для экспорта."
+    "message": "Нет правил для экспорта."
   },
   "transferExportFailedTitle": {
     "message": "Не удалось экспортировать"
@@ -133,10 +210,10 @@
     "message": "Что-то пошло не так"
   },
   "deleteRuleTitle": {
-    "message": "Удалить это правило?"
+    "message": "Удалить правило?"
   },
   "deleteRuleMessage": {
-    "message": "«$p1$» на $p2$ снова будет показан.",
+    "message": "«$p1$» снова появится на $p2$.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -147,10 +224,10 @@
     }
   },
   "deleteRuleConfirm": {
-    "message": "Удалить правило"
+    "message": "Удалить"
   },
   "deleteSiteTitle": {
-    "message": "Удалить все правила для $p1$?",
+    "message": "Удалить правила для $p1$?",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -158,7 +235,7 @@
     }
   },
   "deleteSiteMessage_one": {
-    "message": "$p1$ правило будет удалено навсегда, и все скрытые элементы на $p2$ снова появятся.",
+    "message": "$p1$ правило будет удалено. Скрытые элементы на $p2$ снова появятся.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -169,7 +246,7 @@
     }
   },
   "deleteSiteMessage_few": {
-    "message": "$p1$ правила будут удалены навсегда, и все скрытые элементы на $p2$ снова появятся.",
+    "message": "$p1$ правила будут удалены. Скрытые элементы на $p2$ снова появятся.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -180,7 +257,7 @@
     }
   },
   "deleteSiteMessage_many": {
-    "message": "$p1$ правил будут удалены навсегда, и все скрытые элементы на $p2$ снова появятся.",
+    "message": "$p1$ правил будут удалены. Скрытые элементы на $p2$ снова появятся.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -191,7 +268,7 @@
     }
   },
   "deleteSiteMessage_other": {
-    "message": "$p1$ правила будут удалены навсегда, и все скрытые элементы на $p2$ снова появятся.",
+    "message": "$p1$ правила будут удалены. Скрытые элементы на $p2$ снова появятся.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -202,7 +279,7 @@
     }
   },
   "deleteSiteWarning": {
-    "message": "Это действие нельзя отменить."
+    "message": "Это нельзя отменить."
   },
   "deleteSiteConfirm_one": {
     "message": "Удалить $p1$ правило",
@@ -240,7 +317,7 @@
     "message": "Удалить все правила?"
   },
   "deleteAllMessage": {
-    "message": "Все правила будут удалены навсегда, и все скрытые элементы снова появятся. Правил: $p1$ · Сайтов: $p2$",
+    "message": "Скрытые элементы снова появятся. Правил: $p1$ · Сайтов: $p2$",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -251,7 +328,7 @@
     }
   },
   "deleteAllWarning": {
-    "message": "Это действие нельзя отменить. Чтобы просто временно прекратить скрытие, используйте переключатель «$p1$».",
+    "message": "Это нельзя отменить. Чтобы просто приостановить, выключите «$p1$».",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -259,19 +336,19 @@
     }
   },
   "deleteAllConfirm": {
-    "message": "Удалить все правила"
+    "message": "Удалить все"
   },
   "listEmptyTitle": {
-    "message": "Скрытых элементов пока нет"
+    "message": "Правил пока нет"
   },
   "listEmptyText": {
-    "message": "Откройте окно расширения на любом сайте и выберите «Выбрать элемент для скрытия»."
+    "message": "Выберите элемент на любой странице или нажмите «Добавить»."
   },
   "listNoMatchTitle": {
-    "message": "Нет правил, подходящих под запрос"
+    "message": "Ничего не найдено"
   },
   "listNoMatchText": {
-    "message": "Попробуйте другой сайт, описание или селектор."
+    "message": "Попробуйте другой запрос."
   },
   "listRuleCount_one": {
     "message": "$p1$ правило",
@@ -306,65 +383,55 @@
     }
   },
   "listSiteActive": {
-    "message": "Работает на этом сайте"
+    "message": "Активно"
   },
-  "listRemoveAll": {
-    "message": "Удалить все для этого сайта…"
+  "listSiteActiveTip": {
+    "message": "Выключите, чтобы приостановить все правила на этом сайте."
+  },
+  "listRemoveAllTip": {
+    "message": "Удалить все правила этого сайта."
   },
   "listRuleEnabled": {
-    "message": "Правило включено"
+    "message": "Включено"
   },
   "listNoDescription": {
-    "message": "(без описания)"
+    "message": "(без названия)"
   },
   "listMeta": {
-    "message": "$p1$ · Создано $p2$ на $p3$",
+    "message": "$p1$ · $p2$",
     "placeholders": {
       "p1": {
         "content": "$1"
       },
       "p2": {
         "content": "$2"
+      }
+    }
+  },
+  "listMetaTip": {
+    "message": "Создано $p1$ на $p2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
       },
-      "p3": {
-        "content": "$3"
+      "p2": {
+        "content": "$2"
       }
     }
   },
   "listSubdomainsSuffix": {
-    "message": " · включая поддомены"
+    "message": " + поддомены"
   },
-  "listFallbacks_one": {
-    "message": "$p1$ запасной селектор",
+  "listFallbacks": {
+    "message": "Запасные: $p1$",
     "placeholders": {
       "p1": {
         "content": "$1"
       }
     }
   },
-  "listFallbacks_few": {
-    "message": "$p1$ запасных селектора",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      }
-    }
-  },
-  "listFallbacks_many": {
-    "message": "$p1$ запасных селекторов",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      }
-    }
-  },
-  "listFallbacks_other": {
-    "message": "$p1$ запасного селектора",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      }
-    }
+  "listFallbacksTip": {
+    "message": "Используются, только если основной селектор ничего не нашёл."
   },
   "listEdit": {
     "message": "Изменить"
@@ -376,7 +443,7 @@
     "message": "Весь сайт"
   },
   "pathOnly": {
-    "message": "Только на $p1$",
+    "message": "Только $p1$",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -384,7 +451,7 @@
     }
   },
   "pathPattern": {
-    "message": "Пути по шаблону $p1$",
+    "message": "Шаблон $p1$",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -394,56 +461,71 @@
   "editTitle": {
     "message": "Изменить правило"
   },
+  "editAddTitle": {
+    "message": "Новое правило"
+  },
+  "editAdd": {
+    "message": "Добавить"
+  },
+  "editSave": {
+    "message": "Сохранить"
+  },
   "editDescription": {
-    "message": "Описание"
+    "message": "Название"
+  },
+  "editDescriptionTip": {
+    "message": "Подпись, чтобы узнавать правило. Необязательно."
   },
   "editHostname": {
-    "message": "Сайт (имя хоста)"
+    "message": "Сайт"
   },
-  "editHostnameHint": {
-    "message": "Правило всегда применяется только к этому сайту."
+  "editHostnameTip": {
+    "message": "Правило работает только на этом сайте. Пример: example.com"
   },
   "editSubdomains": {
-    "message": "Применять также на его поддоменах (например, blog.example.com)"
+    "message": "Включая поддомены"
+  },
+  "editSubdomainsTip": {
+    "message": "Применять и на поддоменах, например blog.example.com."
   },
   "editAppliesTo": {
-    "message": "Применяется к"
+    "message": "Страницы"
+  },
+  "editAppliesToTip": {
+    "message": "На каких страницах сайта работает правило."
   },
   "editPathSite": {
-    "message": "Весь сайт (все страницы)"
+    "message": "Все страницы"
   },
   "editPathExact": {
-    "message": "Только этот точный путь"
+    "message": "Один путь"
   },
   "editPathPattern": {
-    "message": "Пути по шаблону"
+    "message": "Шаблон пути"
   },
   "editPath": {
     "message": "Путь"
   },
   "editPathHintExact": {
-    "message": "Пример: /products/shoes (строка запроса и #хеш игнорируются)"
+    "message": "напр. /shop/shoes"
   },
   "editPathHintPattern": {
-    "message": "Используйте * как подстановочный знак. Пример: /blog/*"
+    "message": "* — любые символы, напр. /blog/*"
   },
   "editSelector": {
     "message": "Селектор"
   },
-  "editSelectorHint": {
-    "message": "Используйте « >>> » между сегментами, чтобы войти в shadow root."
+  "editSelectorTip": {
+    "message": "CSS-селектор скрываемого элемента, например .banner или #ad. Совет: «Выбрать элемент» в окне расширения создаст его автоматически. « >>> » — вход в shadow root."
   },
   "editFallbacks": {
-    "message": "Запасные селекторы"
+    "message": "Запасные"
   },
-  "editFallbacksHint": {
-    "message": "По одному в строке. Используются, только если основной селектор ничего не находит."
+  "editFallbacksTip": {
+    "message": "Дополнительные селекторы, по одному в строке. Используются, только если основной ничего не нашёл."
   },
   "editEnabled": {
-    "message": "Правило включено"
-  },
-  "editSave": {
-    "message": "Сохранить изменения"
+    "message": "Включено"
   },
   "editInvalidSelector": {
     "message": "«$p1$» — недопустимый селектор.",
@@ -453,14 +535,20 @@
       }
     }
   },
+  "addDuplicateTitle": {
+    "message": "Уже есть"
+  },
+  "addDuplicateMessage": {
+    "message": "Такое правило уже существует."
+  },
   "ruleErrNoId": {
-    "message": "У правила нет идентификатора."
+    "message": "У правила нет id."
   },
   "ruleErrNoHostname": {
-    "message": "Необходимо указать сайт (имя хоста)."
+    "message": "Укажите сайт."
   },
   "ruleErrBadHostname": {
-    "message": "«$p1$» — недопустимое имя хоста.",
+    "message": "«$p1$» — недопустимый сайт.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -468,13 +556,13 @@
     }
   },
   "ruleErrNoSelector": {
-    "message": "Необходимо указать селектор."
+    "message": "Укажите селектор."
   },
   "ruleErrPathSlash": {
     "message": "Путь должен начинаться с «/»."
   },
   "hideScopeSite": {
-    "message": "Применяется ко всем страницам $p1$ и только к ним.",
+    "message": "Действует на всех страницах $p1$.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -482,10 +570,10 @@
     }
   },
   "hideScopePage": {
-    "message": "У этого элемента нет стабильного идентификатора, поэтому правило применяется только к этой странице."
+    "message": "Только эта страница (нет стабильного селектора)."
   },
   "hideScopeMixed": {
-    "message": "Скрытие похожих элементов применяется ко всем страницам $p1$. Скрытие только этого элемента применяется лишь к этой странице (нет стабильного идентификатора).",
+    "message": "Похожие — на всех страницах $p1$. Только этот — на этой странице.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -493,16 +581,16 @@
     }
   },
   "hideToastHidden": {
-    "message": "Элемент скрыт"
+    "message": "Скрыто"
   },
   "hideToastFailed": {
-    "message": "Не удалось скрыть этот элемент."
+    "message": "Не удалось скрыть элемент."
   },
   "toastUndo": {
     "message": "Отменить"
   },
   "toastRestored": {
-    "message": "Элемент восстановлен"
+    "message": "Восстановлено"
   },
   "toastNothingToUndo": {
     "message": "Нечего отменять"
@@ -511,7 +599,7 @@
     "message": "Скрыть этот элемент?"
   },
   "modalText": {
-    "message": "Он останется скрытым на $p1$, пока вы не восстановите его в настройках расширения.",
+    "message": "Скрыт на $p1$, пока вы не восстановите его в настройках.",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -519,7 +607,7 @@
     }
   },
   "modalSimilar_one": {
-    "message": "Также скрыть $p1$ похожий элемент (пунктирная рамка на странице)",
+    "message": "Скрыть ещё $p1$ похожий элемент (пунктиром)",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -527,7 +615,7 @@
     }
   },
   "modalSimilar_few": {
-    "message": "Также скрыть $p1$ похожих элемента (пунктирная рамка на странице)",
+    "message": "Скрыть ещё $p1$ похожих элемента (пунктиром)",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -535,7 +623,7 @@
     }
   },
   "modalSimilar_many": {
-    "message": "Также скрыть $p1$ похожих элементов (пунктирная рамка на странице)",
+    "message": "Скрыть ещё $p1$ похожих элементов (пунктиром)",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -543,7 +631,7 @@
     }
   },
   "modalSimilar_other": {
-    "message": "Также скрыть $p1$ похожего элемента (пунктирная рамка на странице)",
+    "message": "Скрыть ещё $p1$ похожего элемента (пунктиром)",
     "placeholders": {
       "p1": {
         "content": "$1"
@@ -551,7 +639,7 @@
     }
   },
   "modalConfirm": {
-    "message": "Да, скрыть"
+    "message": "Скрыть"
   },
   "bannerText": {
     "message": "Щёлкните элемент, чтобы скрыть его"

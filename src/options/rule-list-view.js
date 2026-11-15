@@ -1,8 +1,15 @@
 import { h, replaceChildren } from '../shared/dom-helpers.js';
-import { t, tn } from '../shared/i18n.js';
+import { currentLanguage, t, tn } from '../shared/i18n.js';
 import { describePathContext } from '../shared/url-matcher.js';
+import { icon } from './icons.js';
 
-const DATE_FORMAT = { dateStyle: 'medium', timeStyle: 'short' };
+/** Icon-only button; the tooltip doubles as the accessible name. */
+function iconButton(name, label, onClick, danger = false) {
+  return h('button', { class: `icon-btn${danger ? ' icon-btn-danger' : ''}`, type: 'button', title: label, 'aria-label': label, onClick }, icon(name));
+}
+
+const DATE_SHORT = { dateStyle: 'medium' };
+const DATE_LONG = { dateStyle: 'medium', timeStyle: 'short' };
 
 /**
  * Renders the rules grouped by website. Pure view: it receives data and callbacks and
@@ -60,7 +67,7 @@ export class RuleListView {
           { class: 'site-controls' },
           h(
             'label',
-            { class: 'switch-row' },
+            { class: 'switch-row', title: t('listSiteActiveTip') },
             h('input', {
               class: 'switch',
               type: 'checkbox',
@@ -70,7 +77,7 @@ export class RuleListView {
             }),
             h('span', { text: t('listSiteActive') }),
           ),
-          h('button', { class: 'button button-small button-danger', type: 'button', text: t('listRemoveAll'), onClick: () => this.#handlers.onDeleteSite(hostname, rules.length) }),
+          iconButton('trash', t('listRemoveAllTip'), () => this.#handlers.onDeleteSite(hostname, rules.length), true),
         ),
       ),
       rules.map((rule) => this.#renderRule(rule)),
@@ -78,7 +85,8 @@ export class RuleListView {
   }
 
   #renderRule(rule) {
-    const created = new Date(rule.createdAt).toLocaleString(undefined, DATE_FORMAT);
+    const createdShort = new Date(rule.createdAt).toLocaleDateString(currentLanguage(), DATE_SHORT);
+    const createdLong = new Date(rule.createdAt).toLocaleString(currentLanguage(), DATE_LONG);
     const scope = `${describePathContext(rule.pathContext)}${rule.includeSubdomains ? t('listSubdomainsSuffix') : ''}`;
 
     return h(
@@ -95,22 +103,22 @@ export class RuleListView {
       h(
         'div',
         { class: 'rule-body' },
-        h('p', { class: 'rule-title', text: rule.description || t('listNoDescription') }),
-        h('p', { class: 'rule-meta', text: t('listMeta', scope, created, rule.createdOnPath) }),
-        h('code', { class: 'rule-selector', text: rule.selector }),
+        h('p', { class: 'rule-title', text: rule.description || t('listNoDescription'), title: rule.description }),
+        h('p', { class: 'rule-meta', text: t('listMeta', scope, createdShort), title: t('listMetaTip', createdLong, rule.createdOnPath) }),
+        h('code', { class: 'rule-selector', text: rule.selector, title: rule.selector }),
         rule.fallbackSelectors.length > 0 &&
           h(
             'details',
             { class: 'rule-fallbacks' },
-            h('summary', { text: tn('listFallbacks', rule.fallbackSelectors.length) }),
+            h('summary', { text: t('listFallbacks', rule.fallbackSelectors.length), title: t('listFallbacksTip') }),
             rule.fallbackSelectors.map((selector) => h('code', { text: selector })),
           ),
       ),
       h(
         'div',
         { class: 'rule-actions' },
-        h('button', { class: 'button button-small', type: 'button', text: t('listEdit'), onClick: () => this.#handlers.onEditRule(rule) }),
-        h('button', { class: 'button button-small button-danger', type: 'button', text: t('listDelete'), onClick: () => this.#handlers.onDeleteRule(rule) }),
+        iconButton('edit', t('listEdit'), () => this.#handlers.onEditRule(rule)),
+        iconButton('trash', t('listDelete'), () => this.#handlers.onDeleteRule(rule), true),
       ),
     );
   }

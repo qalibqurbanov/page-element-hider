@@ -1,5 +1,7 @@
-import { localizeDocument, t, tn } from '../shared/i18n.js';
+import { api } from '../shared/browser-api.js';
+import { AUTO_LANGUAGE, LANGUAGES, initI18n, localizeDocument, t, tn } from '../shared/i18n.js';
 import { isValidSelector } from '../selectors/selector-resolver.js';
+import { normalizeRule } from '../storage/rule-model.js';
 import { RuleStore } from '../storage/rule-store.js';
 import { MAX_IMPORT_BYTES, buildExport, exportFileName, parseImport } from '../storage/rule-transfer.js';
 import { SettingsStore } from '../storage/settings-store.js';
@@ -12,6 +14,7 @@ import { RuleListView } from './rule-list-view.js';
  * into store calls. Rendering lives in rule-list-view.js, persistence in the stores.
  */
 
+await initI18n();
 localizeDocument();
 
 const ruleStore = new RuleStore();
@@ -21,11 +24,14 @@ const elements = {
   summary: document.getElementById('summary'),
   globalToggle: document.getElementById('global-toggle'),
   search: document.getElementById('search'),
+  addRule: document.getElementById('add-rule'),
+  language: document.getElementById('language-select'),
   deleteAll: document.getElementById('delete-all'),
   exportRules: document.getElementById('export-rules'),
   importRules: document.getElementById('import-rules'),
   importFile: document.getElementById('import-file'),
-  disabledBanner: document.getElementById('disabled-banner'),
+  rulesCount: document.getElementById('rules-count'),
+  aboutVersion: document.getElementById('about-version'),
   list: document.getElementById('rule-list'),
 };
 
@@ -59,6 +65,29 @@ const view = new RuleListView(elements.list, {
   },
 });
 
+// ---- language -----------------------------------------------------------------------
+elements.language.replaceChildren(
+  new Option(t('langAuto'), AUTO_LANGUAGE),
+  ...LANGUAGES.map((language) => new Option(language.name, language.code)),
+);
+elements.language.addEventListener('change', async () => {
+  await settingsStore.setLanguage(elements.language.value);
+  location.reload(); // simplest way to re-render every string in the new language
+});
+
+// ---- add a rule by hand --------------------------------------------------------------
+elements.addRule.addEventListener('click', async () => {
+  const blank = normalizeRule({ id: crypto.randomUUID(), createdOnPath: '/' });
+  const changes = await editRule(blank, { create: true });
+  if (!changes) return;
+  await run(async () => {
+    const { added } = await ruleStore.addMany([normalizeRule({ ...blank, ...changes })]);
+    if (added === 0) {
+      await confirmAction({ title: t('addDuplicateTitle'), message: t('addDuplicateMessage'), confirmLabel: t('dialogOk') });
+    }
+  });
+});
+
 elements.globalToggle.addEventListener('change', () => run(() => settingsStore.setEnabled(elements.globalToggle.checked)));
 elements.search.addEventListener('input', () => {
   state.query = elements.search.value;
@@ -70,7 +99,7 @@ elements.deleteAll.addEventListener('click', async () => {
   const confirmed = await confirmAction({
     title: t('deleteAllTitle'),
     message: t('deleteAllMessage', state.rules.length, siteCount),
-    warning: t('deleteAllWarning', t('optionsHidingOn')),
+    warning: t('deleteAllWarning', t('popupHidingTitle')),
     confirmLabel: t('deleteAllConfirm'),
     danger: true,
   });
@@ -142,7 +171,9 @@ function render() {
 
   elements.summary.textContent = t('optionsSummary', state.rules.length, siteCount);
   elements.globalToggle.checked = state.settings.enabled;
-  elements.disabledBanner.hidden = state.settings.enabled;
+  elements.language.value = state.settings.language;
+  document.body.classList.toggle('is-off', !state.settings.enabled);
+  elements.rulesCount.textContent = String(state.rules.length);
   elements.deleteAll.disabled = state.rules.length === 0;
   elements.exportRules.disabled = state.rules.length === 0;
 
@@ -161,4 +192,33 @@ function filterRules(rules, query) {
   );
 }
 
+// ---- tabs ------------------------------------------------------------------------------
+const tabs = [...document.querySelectorAll('[role="tab"]')];
+const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+
+function selectTab(id, { focus = false } = {}) {
+  const target = tabs.find((tab) => tab.dataset.tab === id) ?? tabs[0];
+  for (const tab of tabs) {
+    const selected = tab === target;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  }
+  for (const panel of panels) panel.hidden = panel.id !== `panel-${target.dataset.tab}`;
+  history.replaceState(null, '', `#${target.dataset.tab}`);
+  if (focus) target.focus();
+}
+
+for (const tab of tabs) {
+  tab.addEventListener('click', () => selectTab(tab.dataset.tab));
+  tab.addEventListener('keydown', (event) => {
+    const index = tabs.indexOf(tab);
+    const moves = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: tabs.length - 1 };
+    if (!(event.key in moves)) return;
+    event.preventDefault();
+    selectTab(tabs[(moves[event.key] + tabs.length) % tabs.length].dataset.tab, { focus: true });
+  });
+}
+
+elements.aboutVersion.textContent = t('aboutVersion', api.runtime.getManifest().version);
+selectTab(location.hash.slice(1));
 refresh();
